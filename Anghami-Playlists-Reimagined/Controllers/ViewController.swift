@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PlayListsViewController: UIViewController {
+    
+    let anghami = AnghamiManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        anghami.performRequest(with: "https://bus.anghami.com/public/user/playlists")
     }
 
 
 }
 
+extension PlayListsViewController: AnghamiManagerDelegate {
+    
+}
