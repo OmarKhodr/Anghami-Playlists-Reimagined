@@ -12,7 +12,9 @@ class LibraryPageViewController: UIPageViewController {
     var lists = [
         "https://bus.anghami.com/public/user/playlists",
         "https://bus.anghami.com/public/user/albums",
-        "https://bus.anghami.com/public/user/artists"]
+        "https://bus.anghami.com/public/user/artists"
+    ]
+    var savedVCs = [MusicViewController?](repeating: nil, count: 3)
     var currentIndex: Int!
     
     override func viewDidLoad() {
@@ -32,17 +34,22 @@ class LibraryPageViewController: UIPageViewController {
     }
     
     func viewMusicController(_ index: Int) -> MusicViewController? {
-        guard
-            let storyboard = storyboard,
-            let page = storyboard
-                .instantiateViewController(withIdentifier: "MusicViewController")
-                as? MusicViewController
-            else {
-                return nil
+        if let saved = savedVCs[index] {
+            return saved
+        } else {
+            guard
+                let storyboard = storyboard,
+                let page = storyboard
+                    .instantiateViewController(withIdentifier: "MusicViewController")
+                    as? MusicViewController
+                else {
+                    return nil
+            }
+            page.requestURL = lists[index]
+            page.listIndex = index
+            savedVCs[index] = page
+            return page
         }
-        page.requestURL = lists[index]
-        page.listIndex = index
-        return page
     }
 }
 

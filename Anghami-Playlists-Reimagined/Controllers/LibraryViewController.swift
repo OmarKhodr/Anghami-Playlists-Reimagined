@@ -12,7 +12,14 @@ class LibraryViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    var lists = [
+        "https://bus.anghami.com/public/user/playlists",
+        "https://bus.anghami.com/public/user/albums",
+        "https://bus.anghami.com/public/user/artists"
+    ]
+    
     var pageVC: LibraryPageViewController?
+    var currentIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +34,31 @@ class LibraryViewController: UIViewController {
         }
     }
 
+    @IBAction func valueChanged(_ sender: UISegmentedControl) {
+        guard let pageVC = pageVC else { fatalError("pageVC not initialized!!") }
+        let nextIndex = sender.selectedSegmentIndex
+        let nextVC = pageVC.viewMusicController(nextIndex)
+        if currentIndex > nextIndex {
+            pageVC.setViewControllers([nextVC!], direction: .reverse, animated: true, completion: nil)
+        } else {
+            pageVC.setViewControllers([nextVC!], direction: .forward, animated: true, completion: nil)
+        }
+        currentIndex = nextIndex
+    }
 }
 
 extension LibraryViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let next = pendingViewControllers.first as? MusicViewController {
             segmentedControl.selectedSegmentIndex = next.listIndex
+            currentIndex = next.listIndex
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if !completed, let previous = previousViewControllers.first as? MusicViewController {
+            segmentedControl.selectedSegmentIndex = previous.listIndex
+            currentIndex = previous.listIndex
         }
     }
 }

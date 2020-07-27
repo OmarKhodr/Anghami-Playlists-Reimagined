@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="MusicViewController" id="BYZ-38-t0r" customClass="MusicViewController" customModule="Anghami_Playlists_Reimagined" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2vh-s6-jtm">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -47,19 +47,22 @@
             <objects>
                 <viewController id="Pvz-Yf-5kh" customClass="LibraryViewController" customModule="Anghami_Playlists_Reimagined" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yjq-qq-7LD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zWa-N6-yWi">
-                                <rect key="frame" x="20" y="20" width="560" height="32"/>
+                                <rect key="frame" x="20" y="20" width="374" height="32"/>
                                 <segments>
                                     <segment title="Playlists"/>
                                     <segment title="Albums"/>
                                     <segment title="Artists"/>
                                 </segments>
+                                <connections>
+                                    <action selector="valueChanged:" destination="Pvz-Yf-5kh" eventType="valueChanged" id="eLL-f1-fzj"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iD-q2-STk">
-                                <rect key="frame" x="0.0" y="59" width="600" height="541"/>
+                                <rect key="frame" x="0.0" y="59" width="414" height="677"/>
                                 <connections>
                                     <segue destination="sDp-XH-ZNg" kind="embed" identifier="ToPages" id="Fcs-no-Bem"/>
                                 </connections>
