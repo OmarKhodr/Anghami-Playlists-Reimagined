@@ -10,14 +10,20 @@ import Foundation
 
 protocol AnghamiManagerDelegate {
     func didFailWithError(_ manager: AnghamiManager, _ error: Error)
-    func didGetPlaylists(_ manager: AnghamiManager, _ playlists: PlaylistsData)
+    func didGetItems(_ manager: AnghamiManager, _ items: [Item], _ type: RequestType)
+}
+
+enum RequestType: Int {
+    case Playlists
+    case Albums
+    case Artists
 }
 
 class AnghamiManager {
     
     var delegate: AnghamiManagerDelegate?
     
-    func performRequest(with urlString: String) {
+    func performRequest(with urlString: String, type: RequestType) {
         if let url = URL(string: urlString) {
             let configuration: URLSessionConfiguration = .default
             configuration.httpAdditionalHeaders =
@@ -32,9 +38,18 @@ class AnghamiManager {
                     return
                 }
                 if let safeData = data {
-                    print(String(decoding: safeData, as: UTF8.self))
-                    if let playlists = self.buildPlaylistModel(data: safeData) {
-                        self.delegate?.didGetPlaylists(self, playlists)
+//                    print(String(decoding: safeData, as: UTF8.self))
+                    var items: [Item]?
+                    switch type {
+                    case .Playlists:
+                        items = self.buildPlaylistModels(data: safeData)
+                    case .Albums:
+                        items = self.buildAlbumModels(data: safeData)
+                    case .Artists:
+                        items = self.buildArtistModels(data: safeData)
+                    }
+                    if let items = items {
+                        self.delegate?.didGetItems(self, items, type)
                     }
                 }
             }
@@ -42,13 +57,49 @@ class AnghamiManager {
         }
     }
     
-    func buildPlaylistModel(data: Foundation.Data) -> PlaylistsData?  {
+    func buildPlaylistModels(data: Foundation.Data) -> [Item]?  {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(PlaylistsData.self, from: data)
-            return decodedData
+            var models: [Item] = []
+            for playlist in decodedData.playlists {
+                models.append(Item(from: playlist))
+            }
+            return models
         } catch {
-            print(error)
+            print("Couldn't build Playlist Models: \(error)")
+            return nil
+        }
+    }
+    
+    func buildAlbumModels(data: Foundation.Data) -> [Item]? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode([AlbumData].self, from: data)
+            var models: [Item] = []
+            for album in decodedData {
+                models.append(Item(from: album))
+            }
+            return models
+            
+        } catch {
+            print("Couldn't build Album Models: \(error)")
+            return nil
+        }
+    }
+    
+    func buildArtistModels(data: Foundation.Data) -> [Item]? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode([ArtistData].self, from: data)
+            var models: [Item] = []
+            for album in decodedData {
+                models.append(Item(from: album))
+            }
+            return models
+            
+        } catch {
+            print("Couldn't build Artist Models: \(error)")
             return nil
         }
     }

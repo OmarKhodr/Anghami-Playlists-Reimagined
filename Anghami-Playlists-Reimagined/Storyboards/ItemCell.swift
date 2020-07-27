@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PlaylistCell: UITableViewCell {
+class ItemCell: UITableViewCell {
 
     @IBOutlet weak var coverArtBackgroundView: UIView!
     @IBOutlet weak var coverArtImageView: UIImageView!
-    @IBOutlet weak var playlistNameLabel: UILabel!
-    @IBOutlet weak var playlistCountLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

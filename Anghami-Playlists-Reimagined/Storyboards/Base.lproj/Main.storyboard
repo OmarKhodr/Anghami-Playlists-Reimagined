@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lEB-sB-SUp">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pvz-Yf-5kh">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,22 +10,22 @@
         <!--Library-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlaylistsViewController" customModule="Anghami_Playlists_Reimagined" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MusicViewController" id="BYZ-38-t0r" customClass="MusicViewController" customModule="Anghami_Playlists_Reimagined" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2vh-s6-jtm">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2vh-s6-jtm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FuM-Rq-Rge"/>
-                            <constraint firstItem="2vh-s6-jtm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="K9z-YK-IGe"/>
-                            <constraint firstItem="2vh-s6-jtm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OyI-Ak-LTA"/>
-                            <constraint firstItem="2vh-s6-jtm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xAC-Aa-0Hk"/>
+                            <constraint firstItem="2vh-s6-jtm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4so-6g-iAl"/>
+                            <constraint firstItem="2vh-s6-jtm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JMR-68-J4U"/>
+                            <constraint firstItem="2vh-s6-jtm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qpL-bU-Ia2"/>
+                            <constraint firstItem="2vh-s6-jtm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uBY-4k-Dqi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,30 +35,63 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="playlistTableView" destination="2vh-s6-jtm" id="x0C-YZ-YmK"/>
+                        <outlet property="tableView" destination="2vh-s6-jtm" id="x0C-YZ-YmK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+            <point key="canvasLocation" x="1755" y="126"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zK6-uf-45C">
+        <!--Library View Controller-->
+        <scene sceneID="3yg-CR-COB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lEB-sB-SUp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dRk-mp-ARj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="Pvz-Yf-5kh" customClass="LibraryViewController" customModule="Anghami_Playlists_Reimagined" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yjq-qq-7LD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zWa-N6-yWi">
+                                <rect key="frame" x="20" y="20" width="560" height="32"/>
+                                <segments>
+                                    <segment title="Playlists"/>
+                                    <segment title="Albums"/>
+                                    <segment title="Artists"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iD-q2-STk">
+                                <rect key="frame" x="0.0" y="59" width="600" height="541"/>
+                                <connections>
+                                    <segue destination="sDp-XH-ZNg" kind="embed" identifier="ToPages" id="Fcs-no-Bem"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TgF-pJ-IAM" firstAttribute="bottom" secondItem="0iD-q2-STk" secondAttribute="bottom" id="8Ak-hH-qXt"/>
+                            <constraint firstItem="zWa-N6-yWi" firstAttribute="leading" secondItem="TgF-pJ-IAM" secondAttribute="leading" constant="20" id="8Cd-MV-op6"/>
+                            <constraint firstItem="0iD-q2-STk" firstAttribute="top" secondItem="zWa-N6-yWi" secondAttribute="bottom" constant="8" id="XGy-8Z-TvT"/>
+                            <constraint firstItem="TgF-pJ-IAM" firstAttribute="trailing" secondItem="0iD-q2-STk" secondAttribute="trailing" id="doQ-ej-160"/>
+                            <constraint firstItem="0iD-q2-STk" firstAttribute="leading" secondItem="TgF-pJ-IAM" secondAttribute="leading" id="jLM-qY-ftv"/>
+                            <constraint firstItem="zWa-N6-yWi" firstAttribute="top" secondItem="TgF-pJ-IAM" secondAttribute="top" constant="20" id="qMU-ai-ZSx"/>
+                            <constraint firstItem="TgF-pJ-IAM" firstAttribute="trailing" secondItem="zWa-N6-yWi" secondAttribute="trailing" constant="20" id="wTN-Nt-fF9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TgF-pJ-IAM"/>
+                    </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ITa-gD-Ioy"/>
+                        <outlet property="segmentedControl" destination="zWa-N6-yWi" id="crD-6B-jqi"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rwS-AG-Nd5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5a-Dp-YIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="107" y="126"/>
+        </scene>
+        <!--Library Page View Controller-->
+        <scene sceneID="6MA-BB-8eT">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="sDp-XH-ZNg" customClass="LibraryPageViewController" customModule="Anghami_Playlists_Reimagined" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7w-Aj-zn9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="126"/>
         </scene>
     </scenes>
     <resources>
