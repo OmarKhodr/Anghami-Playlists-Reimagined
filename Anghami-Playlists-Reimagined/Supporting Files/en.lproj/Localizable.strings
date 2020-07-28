@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Anghami-Playlists-Reimagined
+
+  Created by Omar Khodr on 7/28/20.
+  Copyright © 2020 Omar Khodr. All rights reserved.
+*/
+
+"lang" = "en";
+
+"Likes" = "Likes";
+"Downloads" = "Downloads";
+
+"song" = "song";
+"songs" = "songs";

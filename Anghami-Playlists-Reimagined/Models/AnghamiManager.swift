@@ -38,7 +38,6 @@ class AnghamiManager {
                     return
                 }
                 if let safeData = data {
-//                    print(String(decoding: safeData, as: UTF8.self))
                     var items: [Item]?
                     switch type {
                     case .Playlists:

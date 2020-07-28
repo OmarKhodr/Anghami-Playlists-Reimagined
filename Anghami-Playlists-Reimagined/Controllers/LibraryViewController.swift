@@ -56,7 +56,7 @@ extension LibraryViewController: UIPageViewControllerDelegate {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if !completed, let previous = previousViewControllers.first as? MusicViewController {
+        if (!finished || !completed), let previous = previousViewControllers.first as? MusicViewController {
             segmentedControl.selectedSegmentIndex = previous.listIndex
             currentIndex = previous.listIndex
         }

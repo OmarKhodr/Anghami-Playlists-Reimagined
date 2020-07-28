@@ -31,6 +31,7 @@ class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        cell.layoutIfNeeded()
         cellConfigurator(model, cell)
         return cell
     }

@@ -20,6 +20,10 @@
 		230CB85224CEF27200F203D8 /* AlbumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230CB85124CEF27200F203D8 /* AlbumData.swift */; };
 		230CB85424CEF27A00F203D8 /* ArtistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230CB85324CEF27A00F203D8 /* ArtistData.swift */; };
 		230CB85D24CF0CF000F203D8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230CB85C24CF0CF000F203D8 /* Item.swift */; };
+		230CB85F24CFFE9700F203D8 /* ChildViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230CB85E24CFFE9700F203D8 /* ChildViewControllerExtension.swift */; };
+		230CB86124CFFEFF00F203D8 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230CB86024CFFEFF00F203D8 /* LoadingViewController.swift */; };
+		230CB86324D0059800F203D8 /* StringLocalizedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230CB86224D0059800F203D8 /* StringLocalizedExtension.swift */; };
+		230CB86824D006EC00F203D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 230CB86A24D006EC00F203D8 /* Localizable.strings */; };
 		2316467124B9996900001EE7 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316466F24B9996900001EE7 /* ItemCell.swift */; };
 		2316467224B9996900001EE7 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2316467024B9996900001EE7 /* ItemCell.xib */; };
 		2316467524B9A09500001EE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316467424B9A09500001EE7 /* Constants.swift */; };
@@ -42,6 +46,14 @@
 		230CB85124CEF27200F203D8 /* AlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
 		230CB85324CEF27A00F203D8 /* ArtistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistData.swift; sourceTree = "<group>"; };
 		230CB85C24CF0CF000F203D8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		230CB85E24CFFE9700F203D8 /* ChildViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewControllerExtension.swift; sourceTree = "<group>"; };
+		230CB86024CFFEFF00F203D8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		230CB86224D0059800F203D8 /* StringLocalizedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalizedExtension.swift; sourceTree = "<group>"; };
+		230CB86424D005C500F203D8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		230CB86524D005D700F203D8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		230CB86924D006EC00F203D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		230CB86D24D0074400F203D8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		230CB86E24D0074600F203D8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2316466F24B9996900001EE7 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		2316467024B9996900001EE7 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		2316467424B9A09500001EE7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 				230CB84D24CEDB1D00F203D8 /* LibraryPageViewController.swift */,
 				232965B624CB12DB00F2CF0B /* TableViewDataSource.swift */,
 				230CB84F24CEEC7800F203D8 /* LibraryViewController.swift */,
+				230CB86024CFFEFF00F203D8 /* LoadingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +141,9 @@
 				2309967724B4A5E10017042F /* Assets.xcassets */,
 				2309967924B4A5E10017042F /* LaunchScreen.storyboard */,
 				2316467424B9A09500001EE7 /* Constants.swift */,
+				230CB85E24CFFE9700F203D8 /* ChildViewControllerExtension.swift */,
+				230CB86224D0059800F203D8 /* StringLocalizedExtension.swift */,
+				230CB86A24D006EC00F203D8 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,6 +190,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				fr,
 			);
 			mainGroup = 2309966224B4A5DE0017042F;
 			productRefGroup = 2309966C24B4A5DE0017042F /* Products */;
@@ -190,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230CB86824D006EC00F203D8 /* Localizable.strings in Resources */,
 				2309967B24B4A5E10017042F /* LaunchScreen.storyboard in Resources */,
 				2309967824B4A5E10017042F /* Assets.xcassets in Resources */,
 				2309967624B4A5DE0017042F /* Main.storyboard in Resources */,
@@ -206,9 +225,12 @@
 			files = (
 				2309967324B4A5DE0017042F /* MusicViewController.swift in Sources */,
 				230CB85024CEEC7800F203D8 /* LibraryViewController.swift in Sources */,
+				230CB86124CFFEFF00F203D8 /* LoadingViewController.swift in Sources */,
 				2309966F24B4A5DE0017042F /* AppDelegate.swift in Sources */,
+				230CB86324D0059800F203D8 /* StringLocalizedExtension.swift in Sources */,
 				230CB85D24CF0CF000F203D8 /* Item.swift in Sources */,
 				232965B724CB12DB00F2CF0B /* TableViewDataSource.swift in Sources */,
+				230CB85F24CFFE9700F203D8 /* ChildViewControllerExtension.swift in Sources */,
 				230CB85424CEF27A00F203D8 /* ArtistData.swift in Sources */,
 				230CB85224CEF27200F203D8 /* AlbumData.swift in Sources */,
 				2309967124B4A5DE0017042F /* SceneDelegate.swift in Sources */,
@@ -227,6 +249,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				2309967524B4A5DE0017042F /* Base */,
+				230CB86424D005C500F203D8 /* ar */,
+				230CB86524D005D700F203D8 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -239,6 +263,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		230CB86A24D006EC00F203D8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				230CB86924D006EC00F203D8 /* en */,
+				230CB86D24D0074400F203D8 /* ar */,
+				230CB86E24D0074600F203D8 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -246,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -306,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -363,6 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5X3PZ7P8YG;
 				INFOPLIST_FILE = "Anghami-Playlists-Reimagined/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omarkhodr.Anghami-Playlists-Reimagined";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -381,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5X3PZ7P8YG;
 				INFOPLIST_FILE = "Anghami-Playlists-Reimagined/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omarkhodr.Anghami-Playlists-Reimagined";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

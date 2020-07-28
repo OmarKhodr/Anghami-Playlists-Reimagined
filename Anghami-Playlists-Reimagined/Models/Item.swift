@@ -18,10 +18,14 @@ class Item {
     
     init(from playlist: PlaylistData) {
         id = playlist.id
-        title = K.playlistNameDict[playlist.name] ?? playlist.name
+        if let special = K.playlistNameDict[playlist.name] {
+            title = special.localized
+        } else {
+            title = playlist.name
+        }
         let count = playlist.count
-        subtitle = "\(count) song" + (count != 1 ? "s" : "")
-        let coverArt = K.coverArtDict[title] ?? K.Colors.playlistCoverArt
+        subtitle = "\(count) " + ("song" + (count != 1 ? "s" : "")).localized
+        let coverArt = K.coverArtDict[playlist.name] ?? K.Colors.playlistCoverArt
         coverArtDarkColor = coverArt.0
         coverArtLightColor = coverArt.1
         coverArtImageName = coverArt.2

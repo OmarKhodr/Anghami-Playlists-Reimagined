@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Music"; ObjectID = "GxX-BK-WsM"; */
+"GxX-BK-WsM.text" = "Musique";
+
+/* Class = "UINavigationItem"; title = "Library"; ObjectID = "b4P-qQ-6J5"; */
+"b4P-qQ-6J5.title" = "Library";
+
+/* Class = "UISegmentedControl"; zWa-N6-yWi.segmentTitles[0] = "Playlists"; ObjectID = "zWa-N6-yWi"; */
+"zWa-N6-yWi.segmentTitles[0]" = "Playlists";
+
+/* Class = "UISegmentedControl"; zWa-N6-yWi.segmentTitles[1] = "Albums"; ObjectID = "zWa-N6-yWi"; */
+"zWa-N6-yWi.segmentTitles[1]" = "Albums";
+
+/* Class = "UISegmentedControl"; zWa-N6-yWi.segmentTitles[2] = "Artists"; ObjectID = "zWa-N6-yWi"; */
+"zWa-N6-yWi.segmentTitles[2]" = "Artistes";

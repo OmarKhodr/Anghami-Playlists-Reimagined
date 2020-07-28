@@ -20,6 +20,8 @@ class MusicViewController: UIViewController {
     var items: [Item] = []
     let anghami = AnghamiManager()
     
+    private let loadingVC = LoadingViewController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +32,9 @@ class MusicViewController: UIViewController {
         
         anghami.delegate = self
         
+        add(loadingVC)
         anghami.performRequest(with: requestURL, type: RequestType(rawValue: listIndex)!)
     }
-
 
 }
 
@@ -43,8 +45,11 @@ extension MusicViewController: AnghamiManagerDelegate {
     }
 
     func didGetItems(_ manager: AnghamiManager, _ items: [Item], _ type: RequestType) {
+        DispatchQueue.main.async {
+            self.loadingVC.remove()
+        }
         for item in items {
-            if type == .Playlists && item.title == "Likes" || item.title == "Downloads" {
+            if type == .Playlists && item.title == "Likes".localized || item.title == "Downloads".localized {
                 self.items.insert(item, at: 0)
             } else {
                 self.items.append(item)
@@ -64,7 +69,8 @@ extension MusicViewController: AnghamiManagerDelegate {
 }
 
 extension MusicViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
