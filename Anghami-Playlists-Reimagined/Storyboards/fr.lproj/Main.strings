@@ -1,9 +1,24 @@
 
-/* Class = "UILabel"; text = "Music"; ObjectID = "GxX-BK-WsM"; */
-"GxX-BK-WsM.text" = "Musique";
+/* Class = "UILabel"; text = "Artist"; ObjectID = "GRb-Gw-fz4"; */
+"GRb-Gw-fz4.text" = "Artist";
+
+/* Class = "UILabel"; text = "X SONGS"; ObjectID = "MFc-Vh-zuJ"; */
+"MFc-Vh-zuJ.text" = "X SONGS";
+
+/* Class = "UILabel"; text = "Music"; ObjectID = "PGq-uN-nQH"; */
+"PGq-uN-nQH.text" = "Musique";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VhB-oB-FL7"; */
+"VhB-oB-FL7.text" = "Title";
 
 /* Class = "UINavigationItem"; title = "Library"; ObjectID = "b4P-qQ-6J5"; */
 "b4P-qQ-6J5.title" = "Library";
+
+/* Class = "UILabel"; text = "YEAR"; ObjectID = "kTe-MM-52d"; */
+"kTe-MM-52d.text" = "YEAR";
+
+/* Class = "UINavigationItem"; title = "My Library"; ObjectID = "lXr-22-zrh"; */
+"lXr-22-zrh.title" = "Ma Librairie";
 
 /* Class = "UISegmentedControl"; zWa-N6-yWi.segmentTitles[0] = "Playlists"; ObjectID = "zWa-N6-yWi"; */
 "zWa-N6-yWi.segmentTitles[0]" = "Playlists";

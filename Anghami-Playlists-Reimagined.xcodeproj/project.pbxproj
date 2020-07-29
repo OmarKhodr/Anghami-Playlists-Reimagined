@@ -51,8 +51,6 @@
 		230CB85E24CFFE9700F203D8 /* ChildViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewControllerExtension.swift; sourceTree = "<group>"; };
 		230CB86024CFFEFF00F203D8 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		230CB86224D0059800F203D8 /* StringLocalizedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLocalizedExtension.swift; sourceTree = "<group>"; };
-		230CB86424D005C500F203D8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
-		230CB86524D005D700F203D8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		230CB86924D006EC00F203D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		230CB86D24D0074400F203D8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		230CB86E24D0074600F203D8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -62,6 +60,8 @@
 		232965B624CB12DB00F2CF0B /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		23AB326E24D162BB005AE33C /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		23AB327424D17676005AE33C /* ItemSongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSongData.swift; sourceTree = "<group>"; };
+		23DD014724D1CAB200B63E6B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		23DD014924D1CAB500B63E6B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,8 +257,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				2309967524B4A5DE0017042F /* Base */,
-				230CB86424D005C500F203D8 /* ar */,
-				230CB86524D005D700F203D8 /* fr */,
+				23DD014724D1CAB200B63E6B /* ar */,
+				23DD014924D1CAB500B63E6B /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
