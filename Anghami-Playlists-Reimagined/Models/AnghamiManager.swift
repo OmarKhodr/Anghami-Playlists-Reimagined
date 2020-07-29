@@ -17,6 +17,8 @@ enum RequestType: Int {
     case Playlists
     case Albums
     case Artists
+    case Playlist
+    case Album
 }
 
 class AnghamiManager {
@@ -38,6 +40,7 @@ class AnghamiManager {
                     return
                 }
                 if let safeData = data {
+//                    print(String(data: safeData, encoding: String.Encoding.utf8))
                     var items: [Item]?
                     switch type {
                     case .Playlists:
@@ -46,6 +49,10 @@ class AnghamiManager {
                         items = self.buildAlbumModels(data: safeData)
                     case .Artists:
                         items = self.buildArtistModels(data: safeData)
+                    case .Playlist:
+                        items = self.buildPlaylistSongModels(data: safeData)
+                    case .Album:
+                        items = self.buildAlbumSongModels(data: safeData)
                     }
                     if let items = items {
                         self.delegate?.didGetItems(self, items, type)
@@ -99,6 +106,36 @@ class AnghamiManager {
             
         } catch {
             print("Couldn't build Artist Models: \(error)")
+            return nil
+        }
+    }
+    
+    func buildPlaylistSongModels(data: Foundation.Data) -> [Item]? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(PlaylistSongData.self, from: data)
+            var models: [Item] = []
+            for song in decodedData.data {
+                models.append(Item(from: song))
+            }
+            return models
+        } catch {
+            print("Couldn't build Playlist Song Models: \(error)")
+            return nil
+        }
+    }
+    
+    func buildAlbumSongModels(data: Foundation.Data) -> [Item]? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(AlbumSongData.self, from: data)
+            var models: [Item] = []
+            for song in decodedData.songs {
+                models.append(Item(from: song))
+            }
+            return models
+        } catch {
+            print("Couldn't build Album Song Models: \(error)")
             return nil
         }
     }

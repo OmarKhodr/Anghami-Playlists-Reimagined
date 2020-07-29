@@ -35,6 +35,7 @@ class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
         cellConfigurator(model, cell)
         return cell
     }
+    
 }
 
 extension TableViewDataSource where Model == Item {

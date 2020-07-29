@@ -28,6 +28,8 @@
 		2316467224B9996900001EE7 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2316467024B9996900001EE7 /* ItemCell.xib */; };
 		2316467524B9A09500001EE7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2316467424B9A09500001EE7 /* Constants.swift */; };
 		232965B724CB12DB00F2CF0B /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232965B624CB12DB00F2CF0B /* TableViewDataSource.swift */; };
+		23AB326F24D162BB005AE33C /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB326E24D162BB005AE33C /* ItemDetailViewController.swift */; };
+		23AB327524D17676005AE33C /* ItemSongData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB327424D17676005AE33C /* ItemSongData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		2316467024B9996900001EE7 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		2316467424B9A09500001EE7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		232965B624CB12DB00F2CF0B /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		23AB326E24D162BB005AE33C /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		23AB327424D17676005AE33C /* ItemSongData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSongData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				232965B624CB12DB00F2CF0B /* TableViewDataSource.swift */,
 				230CB84F24CEEC7800F203D8 /* LibraryViewController.swift */,
 				230CB86024CFFEFF00F203D8 /* LoadingViewController.swift */,
+				23AB326E24D162BB005AE33C /* ItemDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				230CB85124CEF27200F203D8 /* AlbumData.swift */,
 				230CB85324CEF27A00F203D8 /* ArtistData.swift */,
 				230CB85C24CF0CF000F203D8 /* Item.swift */,
+				23AB327424D17676005AE33C /* ItemSongData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,12 +232,14 @@
 				2309967324B4A5DE0017042F /* MusicViewController.swift in Sources */,
 				230CB85024CEEC7800F203D8 /* LibraryViewController.swift in Sources */,
 				230CB86124CFFEFF00F203D8 /* LoadingViewController.swift in Sources */,
+				23AB326F24D162BB005AE33C /* ItemDetailViewController.swift in Sources */,
 				2309966F24B4A5DE0017042F /* AppDelegate.swift in Sources */,
 				230CB86324D0059800F203D8 /* StringLocalizedExtension.swift in Sources */,
 				230CB85D24CF0CF000F203D8 /* Item.swift in Sources */,
 				232965B724CB12DB00F2CF0B /* TableViewDataSource.swift in Sources */,
 				230CB85F24CFFE9700F203D8 /* ChildViewControllerExtension.swift in Sources */,
 				230CB85424CEF27A00F203D8 /* ArtistData.swift in Sources */,
+				23AB327524D17676005AE33C /* ItemSongData.swift in Sources */,
 				230CB85224CEF27200F203D8 /* AlbumData.swift in Sources */,
 				2309967124B4A5DE0017042F /* SceneDelegate.swift in Sources */,
 				230CB84E24CEDB1D00F203D8 /* LibraryPageViewController.swift in Sources */,

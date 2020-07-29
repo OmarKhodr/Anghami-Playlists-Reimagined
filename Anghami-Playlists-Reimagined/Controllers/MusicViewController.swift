@@ -16,6 +16,7 @@ class MusicViewController: UIViewController {
     
     var listIndex: Int!
     var requestURL: String!
+    var selectedItem: Item!
     
     var items: [Item] = []
     let anghami = AnghamiManager()
@@ -68,9 +69,50 @@ extension MusicViewController: AnghamiManagerDelegate {
     }
 }
 
+enum Segues: String {
+    case ToItem = "ToItem"
+}
+
 extension MusicViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        //i.e. if cell is that of an artist
+        if listIndex == 2 { return }
+
+        selectedItem = items[indexPath.row]
+        performSegue(withIdentifier: "ToItem", sender: cell)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.ToItem.rawValue {
+            let destinationVC = segue.destination as! ItemDetailViewController
+            let currType = RequestType(rawValue: listIndex)!
+            switch currType {
+            case .Playlists:
+                destinationVC.requestType = .Playlist
+                if selectedItem.title == "Likes" || selectedItem.title == "Downloads" {
+                    destinationVC.coverArt = K.coverArtDict[K.nameDict[selectedItem.title]!]!
+                } else {
+                    destinationVC.coverArt = K.Colors.playlistCoverArt
+                }
+                destinationVC.itemArtist = ""
+                destinationVC.itemNumSongs = selectedItem.subtitle
+            case .Albums:
+                destinationVC.requestType = .Album
+                destinationVC.coverArt = K.Colors.albumCoverArt
+                destinationVC.itemArtist = selectedItem.subtitle
+                destinationVC.itemNumSongs = ""
+                
+            default:
+                break
+            }
+            destinationVC.itemTitle = selectedItem.title
+            destinationVC.itemID = selectedItem.id
+        }
     }
 }

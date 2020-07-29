@@ -49,4 +49,13 @@ class Item {
         coverArtLightColor = #colorLiteral(red: 0.5058823529, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
     }
     
+    init(from song: SongData) {
+        id = song.id
+        title = song.title
+        subtitle = song.artist
+        coverArtImageName = "music.note"
+        coverArtDarkColor = #colorLiteral(red: 0.8823529412, green: 0.4392156863, blue: 0.3333333333, alpha: 1)
+        coverArtLightColor = #colorLiteral(red: 0.9803921569, green: 0.6941176471, blue: 0.6274509804, alpha: 1)
+    }
+    
 }
