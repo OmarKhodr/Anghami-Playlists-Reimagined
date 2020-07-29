@@ -20,4 +20,5 @@ struct SongData: Codable {
     let id: String
     let title: String
     let artist: String
+    let year: String
 }

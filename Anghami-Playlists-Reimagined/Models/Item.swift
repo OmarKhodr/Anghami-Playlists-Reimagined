@@ -15,6 +15,7 @@ class Item {
     let coverArtDarkColor: UIColor
     let coverArtLightColor: UIColor
     let coverArtImageName: String
+    let year: String
     
     init(from playlist: PlaylistData) {
         id = playlist.id
@@ -29,6 +30,7 @@ class Item {
         coverArtDarkColor = coverArt.0
         coverArtLightColor = coverArt.1
         coverArtImageName = coverArt.2
+        year = ""
     }
     
     init(from album: AlbumData) {
@@ -38,6 +40,7 @@ class Item {
         coverArtImageName = "rectangle.stack.fill"
         coverArtDarkColor = #colorLiteral(red: 0.03529411765, green: 0.5176470588, blue: 0.8901960784, alpha: 1)
         coverArtLightColor = #colorLiteral(red: 0.4549019608, green: 0.7254901961, blue: 1, alpha: 1)
+        year = album.year
     }
     
     init(from artist: ArtistData) {
@@ -47,6 +50,7 @@ class Item {
         coverArtImageName = "person.fill"
         coverArtDarkColor = #colorLiteral(red: 0, green: 0.8078431373, blue: 0.7882352941, alpha: 1)
         coverArtLightColor = #colorLiteral(red: 0.5058823529, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
+        year = ""
     }
     
     init(from song: SongData) {
@@ -56,6 +60,7 @@ class Item {
         coverArtImageName = "music.note"
         coverArtDarkColor = #colorLiteral(red: 0.8823529412, green: 0.4392156863, blue: 0.3333333333, alpha: 1)
         coverArtLightColor = #colorLiteral(red: 0.9803921569, green: 0.6941176471, blue: 0.6274509804, alpha: 1)
+        year = song.year
     }
     
 }

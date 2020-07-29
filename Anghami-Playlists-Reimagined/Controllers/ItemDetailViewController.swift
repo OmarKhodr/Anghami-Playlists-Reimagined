@@ -58,11 +58,19 @@ class ItemDetailViewController: UIViewController {
     
     func setupItemInfo() {
         coverArtBackgroundView.backgroundColor = coverArt.0
+        coverArtBackgroundView.layer.cornerRadius = 16
+        coverArtBackgroundView.layer.masksToBounds = true
         coverArtImageView.tintColor = coverArt.1
         coverArtImageView.image = UIImage(systemName: coverArt.2)
         itemTitleLabel.text = itemTitle
+        if itemArtist == "" {
+            itemArtistLabel.isHidden = true
+        }
         itemArtistLabel.text = itemArtist
         itemNumSongsLabel.text = itemNumSongs
+        if itemNumSongs == "" {
+            itemNumSongsLabel.isHidden = true
+        }
         itemYearLabel.text = itemYear
     }
     

@@ -101,12 +101,13 @@ extension MusicViewController: UITableViewDelegate {
                     destinationVC.coverArt = K.Colors.playlistCoverArt
                 }
                 destinationVC.itemArtist = ""
-                destinationVC.itemNumSongs = selectedItem.subtitle
+                destinationVC.itemNumSongs = selectedItem.subtitle.uppercased()
             case .Albums:
                 destinationVC.requestType = .Album
                 destinationVC.coverArt = K.Colors.albumCoverArt
                 destinationVC.itemArtist = selectedItem.subtitle
                 destinationVC.itemNumSongs = ""
+                destinationVC.itemYear = selectedItem.year
                 
             default:
                 break

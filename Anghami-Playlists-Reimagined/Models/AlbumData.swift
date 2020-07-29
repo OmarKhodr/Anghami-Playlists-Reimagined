@@ -13,4 +13,5 @@ struct AlbumData: Codable {
     let title: String
     let artistID: String
     let artistname: String
+    let year: String
 }
